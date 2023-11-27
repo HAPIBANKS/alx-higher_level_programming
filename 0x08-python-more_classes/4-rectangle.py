@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+""""Rectangleclass"""
+
+
 class Rectangle:
+    """initialization of att"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
