@@ -3,18 +3,18 @@
 
 
 class Rectangle:
-    """Change representation"""
+    """change representation"""
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
-        return self._width
+        return (self.__width)
 
     @width.setter
     def width(self, value):
@@ -22,11 +22,12 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self._width = value
+        self.__width = value
+        return (self.__width)
 
     @property
     def height(self):
-        return self._height
+        return (self.__height)
 
     @height.setter
     def height(self, value):
@@ -34,31 +35,33 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self._height = value
+        self.__height = value
+        return (self.__height)
 
     def area(self):
-        return self.width * self.height
+        return (self.__width * self.__height)
 
     def perimeter(self):
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
-        else:
-            return 2 * (self.width + self.height)
+        return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        if self.width == 0 or self.height == 0:
-            return ""
-        else:
-            rectangle = ""
-            for i in range(self.height):
-                for j in range(self.width):
-                    rectangle += Rectangle.print_symbol
-                rectangle += "\n"
-            return rectangle
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+
+        rectangle = []
+        for i in range(self.__height):
+            [rectangle.append(str(self.print_symbol)) for j in range(self.__width)]
+            if i != self.__height - 1:
+                rectangle.append("\n")
+        return ("".join(rectangle))
 
     def __repr__(self):
-        return f"Rectangle({self.width}, {self.height})"
+        rectangle = "Rectangle(" + str(self.__width)
+        rectangle += ", " + str(self.__height) + ")"
+        return (rectangle)
 
     def __del__(self):
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
