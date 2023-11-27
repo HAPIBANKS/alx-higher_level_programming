@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 class Rectangle:
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -53,3 +56,7 @@ class Rectangle:
         rectangle = "Rectangle(" + str(self.__width)
         rectangle += ", " + str(self.__height) + ")"
         return (rectangle)
+
+    def __del__(self):
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
