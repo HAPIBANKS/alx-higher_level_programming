@@ -1,22 +1,6 @@
 #!/usr/bin/python3
 """
-Script to add command-line arguments to a Python list and save them to a file.
-
-This script reads the existing content from 'add_item.json' (if it exists) using
-the 'load_from_json_file' function. It then adds the command-line arguments (excluding
-the script name) to the list. The updated list is saved as a JSON representation in
-the 'add_item.json' file using the 'save_to_json_file' function.
-
-Usage:
-    python script_name.py arg1 arg2 ...
-
-Dependencies:
-    - save_to_json_file function from 5-save_to_json_file.py
-    - load_from_json_file function from 6-load_from_json_file.py
-
-Note:
-    If 'add_item.json' doesn't exist, it will be created, and the command-line
-    arguments will be added to an empty list.
+Script to add command-line argument
 """
 
 
