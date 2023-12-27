@@ -10,9 +10,6 @@ def lookup(obj):
 
     for key in dir(obj):
         value = getattr(obj, key)
-        if callable(value):
-            attributes.append(f"{key}()")
-        else:
-            attributes.append(key)
+        attributes.append(key)
 
     return attributes
