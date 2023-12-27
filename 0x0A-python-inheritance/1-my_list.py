@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-MyList class inherits from list and provides a custom print_sorted method.
+MyList class inherits from list and provides a custom print_sorted method(function).
 """
 
 
