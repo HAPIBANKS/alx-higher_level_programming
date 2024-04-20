@@ -1,5 +1,6 @@
 #!/usr/bin/pyhton3
-"""Filter state"""
+"""Filter states that start with N from a database
+hbtn_0e_0usa using the module MySQLdb"""
 
 
 if __name__ == "__main__":
